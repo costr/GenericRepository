@@ -10,6 +10,7 @@ using Repository.Interfaces;
 namespace Repository.Generics {
     public class RepositoryString<TEntity> : RepositoryBase where TEntity : class, ISaveableString<TEntity> {
         public RepositoryString(DbContext ctx) : base(ctx){}
+
         #region Non-Async
         public TEntity GetById(string id, bool includeDefaults = false, params Expression<Func<TEntity, object>>[] includes) {
             var query = GetByIncludes(_entities.Set<TEntity>(), includes, includeDefaults);
