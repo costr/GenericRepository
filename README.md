@@ -22,6 +22,8 @@ Each of the three types have a few requirements
       }
       //other properties
   }
+  
+  if this type of implementation doesn't work. you can always just have a a static class with the same expression function and pass those values into the repo functions
 
 Your actual repository of the article:
 
@@ -31,13 +33,5 @@ so when you call something like:
 
   articleRepo.GetById(1);
   
-this is saying get me this article, and no child "defaults" or any other ones
-
-  articleRepo.GetById(1, true);
-  
-says get me the article and all defaulted child properties specified in the "default includes"
-
-  articleRepo.GetById(1, true, include=>include.SomethingElseToo);
-  
-says get me the article, the defaults AND this extra thing too.
-
+This repository wouldn't have been possible without the initial explanation and understanding from Adam Costenbader.  The idea of using Generics, he came up with Generics examples I had orignally used. His version assumed you were lazy loading your child entities.  I added the ability to offer both lazy loading or specific entities.
+@costr is his Github profile
